@@ -1,0 +1,34 @@
+ko:
+  label_asciisoft_header: 포털 헤더
+  label_asciisoft_portal: ASCII SOFT 포털
+  label_asciisoft_status: 진행 상태 표시
+  label_asciisoft_subtitle: 부가 문구
+  label_asciisoft_background: 헤더 배경
+  label_asciisoft_bg_pattern: 기본 패턴
+  label_asciisoft_bg_image: 이미지
+  label_asciisoft_bg_none: 없음
+  label_asciisoft_image: 배경 이미지
+  label_asciisoft_image_remove: 현재 이미지 삭제
+  label_asciisoft_image_hint: "PNG · JPG · WEBP · GIF, 3MB 이하. 가로 1600px 이상 권장"
+  label_asciisoft_status_auto: 자동 (프로젝트 상태 따름)
+  label_asciisoft_status_preparing: 준비중
+  label_asciisoft_status_active: 진행중
+  label_asciisoft_status_maintenance: 유지보수
+  label_asciisoft_status_paused: 일시중지
+  label_asciisoft_status_closed: 종료
+  label_asciisoft_status_hidden: 표시 안함
+  label_asciisoft_subtitle_hint: "예: 고객사 공유 프로젝트 (120자 이내)"
+  label_asciisoft_preview: 미리보기
+  error_asciisoft_image_too_large: "이미지는 %{size} 이하만 올릴 수 있습니다."
+  error_asciisoft_image_type: "PNG, JPG, WEBP, GIF 이미지만 올릴 수 있습니다."
+  setting_asciisoft_terminology: "용어 변경 (일감 → 요청, Issue → Request)"
+  setting_asciisoft_filter_labels: "상태 필터 문구 변경 (진행중 → 미완료, 완료됨 → 종료)"
+  setting_asciisoft_module_new_button: "+ 메뉴를 현재 모듈의 등록 버튼 하나로 표시"
+  setting_asciisoft_default_all_status: "요청 목록 첫 화면을 '전체' 상태로 표시"
+  setting_asciisoft_notifications: 실시간 알림 사용
+  setting_asciisoft_poll_seconds: "알림 확인 주기 (초)"
+  setting_asciisoft_customer_role: 고객 역할 이름
+  setting_asciisoft_new_status_names: "'신규' 통계에 포함할 상태"
+  setting_asciisoft_excluded_status_names: 진척도 계산에서 제외할 상태
+  text_asciisoft_restart: "용어 관련 설정은 레드마인을 재시작해야 적용됩니다."
+  text_asciisoft_names_hint: "상태 이름을 쉼표(,)로 구분해 입력"

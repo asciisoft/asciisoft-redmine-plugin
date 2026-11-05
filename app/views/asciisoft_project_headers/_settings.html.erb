@@ -1,0 +1,36 @@
+<% header = AsciisoftProjectHeader.find_by(project_id: @project.id) || AsciisoftProjectHeader.new(project: @project) %>
+<%= form_tag(asciisoft_project_header_path(@project), method: :post, multipart: true, id: 'asciisoft-header-form') do %>
+<div class="box tabular">
+  <p>
+    <label for="asciisoft_status_key"><%= l(:label_asciisoft_status) %></label>
+    <%= select_tag 'status_key',
+                   options_for_select(AsciisoftProjectHeader::STATUS_KEYS.map {|k| [l("label_asciisoft_status_#{k}"), k] }, header.status_key),
+                   id: 'asciisoft_status_key' %>
+  </p>
+  <p>
+    <label for="asciisoft_subtitle"><%= l(:label_asciisoft_subtitle) %></label>
+    <%= text_field_tag 'subtitle', header.subtitle, size: 60, maxlength: 120, id: 'asciisoft_subtitle',
+                       placeholder: l(:label_asciisoft_subtitle_hint) %>
+  </p>
+  <p>
+    <label><%= l(:label_asciisoft_background) %></label>
+    <% AsciisoftProjectHeader::BG_MODES.each do |mode| %>
+      <label class="inline"><%= radio_button_tag 'bg_mode', mode, header.bg_mode == mode %> <%= l("label_asciisoft_bg_#{mode}") %></label>
+    <% end %>
+  </p>
+  <p>
+    <label for="asciisoft_image"><%= l(:label_asciisoft_image) %></label>
+    <%= file_field_tag 'image', accept: 'image/png,image/jpeg,image/webp,image/gif', id: 'asciisoft_image' %>
+    <em class="info"><%= l(:label_asciisoft_image_hint) %></em>
+  </p>
+  <% if header.persisted? && header.image? %>
+  <p>
+    <label><%= l(:label_asciisoft_preview) %></label>
+    <img src="<%= asciisoft_project_header_image_path(@project, v: header.updated_at.to_i) %>" alt=""
+         style="max-width:420px;max-height:120px;border-radius:12px;object-fit:cover;vertical-align:middle">
+    <label class="inline"><%= check_box_tag 'remove_image', '1', false %> <%= l(:label_asciisoft_image_remove) %></label>
+  </p>
+  <% end %>
+</div>
+<%= submit_tag l(:button_save) %>
+<% end %>

@@ -1,0 +1,31 @@
+<% s = AsciisoftPortal::DEFAULTS.merge((@settings || {}).to_h.transform_keys(&:to_s)) %>
+<div class="box tabular settings">
+  <% %w[terminology filter_labels module_new_button default_all_status notifications].each do |key| %>
+  <p>
+    <label for="settings_<%= key %>"><%= l("setting_asciisoft_#{key}") %></label>
+    <%= hidden_field_tag "settings[#{key}]", '0', id: nil %>
+    <%= check_box_tag "settings[#{key}]", '1', s[key].to_s == '1', id: "settings_#{key}" %>
+  </p>
+  <% end %>
+  <p>
+    <label for="settings_poll_seconds"><%= l(:setting_asciisoft_poll_seconds) %></label>
+    <%= number_field_tag 'settings[poll_seconds]', s['poll_seconds'], min: 10, max: 600, id: 'settings_poll_seconds' %>
+  </p>
+  <p>
+    <label for="settings_customer_role"><%= l(:setting_asciisoft_customer_role) %></label>
+    <%= select_tag 'settings[customer_role]',
+                   options_for_select([['', '']] + Role.givable.sorted.map {|r| [r.name, r.name] }, s['customer_role']),
+                   id: 'settings_customer_role' %>
+  </p>
+  <p>
+    <label for="settings_new_status_names"><%= l(:setting_asciisoft_new_status_names) %></label>
+    <%= text_field_tag 'settings[new_status_names]', s['new_status_names'], size: 40, id: 'settings_new_status_names' %>
+    <em class="info"><%= l(:text_asciisoft_names_hint) %></em>
+  </p>
+  <p>
+    <label for="settings_excluded_status_names"><%= l(:setting_asciisoft_excluded_status_names) %></label>
+    <%= text_field_tag 'settings[excluded_status_names]', s['excluded_status_names'], size: 40, id: 'settings_excluded_status_names' %>
+    <em class="info"><%= l(:text_asciisoft_names_hint) %></em>
+  </p>
+  <p><em class="info"><%= l(:text_asciisoft_restart) %></em></p>
+</div>

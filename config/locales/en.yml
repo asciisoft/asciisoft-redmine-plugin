@@ -1,0 +1,34 @@
+en:
+  label_asciisoft_header: Portal header
+  label_asciisoft_portal: ASCII SOFT Portal
+  label_asciisoft_status: Status label
+  label_asciisoft_subtitle: Subtitle
+  label_asciisoft_background: Header background
+  label_asciisoft_bg_pattern: Default pattern
+  label_asciisoft_bg_image: Image
+  label_asciisoft_bg_none: None
+  label_asciisoft_image: Background image
+  label_asciisoft_image_remove: Remove current image
+  label_asciisoft_image_hint: "PNG, JPG, WEBP or GIF up to 3MB. 1600px wide or more recommended"
+  label_asciisoft_status_auto: Auto (follow project status)
+  label_asciisoft_status_preparing: Preparing
+  label_asciisoft_status_active: In progress
+  label_asciisoft_status_maintenance: Maintenance
+  label_asciisoft_status_paused: Paused
+  label_asciisoft_status_closed: Closed
+  label_asciisoft_status_hidden: Hidden
+  label_asciisoft_subtitle_hint: "e.g. Shared with client (max 120 characters)"
+  label_asciisoft_preview: Preview
+  error_asciisoft_image_too_large: "Image must be %{size} or smaller."
+  error_asciisoft_image_type: "Only PNG, JPG, WEBP and GIF images are allowed."
+  setting_asciisoft_terminology: "Rename terms (Issue → Request)"
+  setting_asciisoft_filter_labels: "Rename status filter labels (Korean UI)"
+  setting_asciisoft_module_new_button: "Show only the add button for the current module in the + menu"
+  setting_asciisoft_default_all_status: "Show all statuses when the request list is first opened"
+  setting_asciisoft_notifications: Enable live notifications
+  setting_asciisoft_poll_seconds: "Notification polling interval (seconds)"
+  setting_asciisoft_customer_role: Customer role name
+  setting_asciisoft_new_status_names: "Statuses counted as 'New'"
+  setting_asciisoft_excluded_status_names: Statuses excluded from progress
+  text_asciisoft_restart: "Terminology settings take effect after restarting Redmine."
+  text_asciisoft_names_hint: "Comma-separated status names"
