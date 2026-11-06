@@ -39,3 +39,6 @@ en:
   label_asciisoft_logo: Project logo image
   label_asciisoft_logo_hint: "PNG, JPG, WEBP or GIF up to 1MB. Displayed up to 70×70px"
   label_asciisoft_logo_remove: Remove current logo
+  label_asciisoft_landing_project: Open my project after login
+  label_asciisoft_landing_none: "None"
+  text_asciisoft_landing_hint: "After login, go straight to this project instead of the home page."

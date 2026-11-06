@@ -20,6 +20,8 @@ module AsciisoftPortal
     apply_patch(::Project, Patches::ProjectPatch)
     apply_patch(::BoardsController, Patches::SortDefaultPatch)
     apply_patch(::FilesController, Patches::SortDefaultPatch)
+    apply_patch(::AccountController, Patches::AccountControllerPatch)
+    apply_patch(::MyController, Patches::MyControllerPatch)
     UserFormats.install!
     WikiMenu.install!
     AsciisoftPortal::Hooks # 훅 리스너 등록 (autoload)

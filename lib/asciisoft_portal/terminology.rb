@@ -27,6 +27,7 @@ module AsciisoftPortal
       label_not_equals: '같지 않음',
       label_contains: '포함',
       label_not_contains: '포함 안 함',
+      label_home: '메인화면',
       label_open_issues: '미완료',
       label_open_issues_plural: '미완료',
       label_closed_issues: '종료',

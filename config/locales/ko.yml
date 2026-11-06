@@ -39,3 +39,7 @@ ko:
   label_asciisoft_logo: 프로젝트 로고 이미지
   label_asciisoft_logo_hint: "PNG · JPG · WEBP · GIF, 1MB 이하. 화면에는 최대 70×70px로 표시"
   label_asciisoft_logo_remove: 현재 로고 삭제
+  label_asciisoft_landing_project: 내 프로젝트 바로 진입
+  label_asciisoft_landing_none: "사용 안 함"
+  text_asciisoft_landing_hint: "로그인하면 메인화면 대신 이 프로젝트로 바로 이동합니다."
+  button_create_and_follow: 만들고 이동
