@@ -23,6 +23,10 @@ module AsciisoftPortal
 
     # 상태 이름 '진행중'과 겹치는 기본 필터 문구 정리
     KO_FILTER_LABELS = {
+      label_equals: '같음',
+      label_not_equals: '같지 않음',
+      label_contains: '포함',
+      label_not_contains: '포함 안 함',
       label_open_issues: '미완료',
       label_open_issues_plural: '미완료',
       label_closed_issues: '종료',

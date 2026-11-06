@@ -22,7 +22,7 @@ ko:
   error_asciisoft_image_too_large: "이미지는 %{size} 이하만 올릴 수 있습니다."
   error_asciisoft_image_type: "PNG, JPG, WEBP, GIF 이미지만 올릴 수 있습니다."
   setting_asciisoft_terminology: "용어 변경 (일감 → 요청, Issue → Request)"
-  setting_asciisoft_filter_labels: "상태 필터 문구 변경 (진행중 → 미완료, 완료됨 → 종료)"
+  setting_asciisoft_filter_labels: "검색조건 문구 변경 (이다 → 같음, 아니다 → 같지 않음, 진행중 → 미완료, 완료됨 → 종료)"
   setting_asciisoft_module_new_button: "+ 메뉴를 현재 모듈의 등록 버튼 하나로 표시"
   setting_asciisoft_default_all_status: "요청 목록 첫 화면을 '전체' 상태로 표시"
   setting_asciisoft_notifications: 실시간 알림 사용

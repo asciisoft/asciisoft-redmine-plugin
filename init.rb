@@ -7,7 +7,7 @@ Redmine::Plugin.register :asciisoft_portal do
   name 'ASCII SOFT Portal'
   author 'ASCII SOFT'
   description '요청 용어 변경, 모듈별 등록 버튼, 실시간 알림, 프로젝트 헤더, 화면 모드'
-  version '1.1.0'
+  version '1.2.0'
   url 'https://asciisoft.com'
   author_url 'https://asciisoft.com'
   requires_redmine version_or_higher: '6.0.0'
