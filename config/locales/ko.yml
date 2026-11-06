@@ -30,5 +30,7 @@ ko:
   setting_asciisoft_customer_role: 고객 역할 이름
   setting_asciisoft_new_status_names: "'신규' 통계에 포함할 상태"
   setting_asciisoft_excluded_status_names: 진척도 계산에서 제외할 상태
-  text_asciisoft_restart: "용어 관련 설정은 레드마인을 재시작해야 적용됩니다."
+  text_asciisoft_restart: "용어 · 위키 메뉴 설정은 레드마인을 재시작해야 적용됩니다."
   text_asciisoft_names_hint: "상태 이름을 쉼표(,)로 구분해 입력"
+  label_asciisoft_no: 번호
+  setting_asciisoft_wiki_index_first: "위키 메뉴를 누르면 문서 목록부터 표시"

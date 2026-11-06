@@ -5,7 +5,7 @@ module AsciisoftPortal
     'terminology' => '1', 'filter_labels' => '1', 'module_new_button' => '1',
     'default_all_status' => '1', 'notifications' => '1', 'poll_seconds' => '30',
     'customer_role' => '일반 사용자', 'new_status_names' => '신규등록',
-    'excluded_status_names' => '반려'
+    'excluded_status_names' => '반려', 'wiki_index_first' => '1'
   }.freeze
 
   module_function
@@ -18,6 +18,10 @@ module AsciisoftPortal
     apply_patch(::Issue, Patches::IssuePatch)
     apply_patch(::Journal, Patches::JournalPatch)
     apply_patch(::Project, Patches::ProjectPatch)
+    apply_patch(::BoardsController, Patches::SortDefaultPatch)
+    apply_patch(::FilesController, Patches::SortDefaultPatch)
+    UserFormats.install!
+    WikiMenu.install!
     AsciisoftPortal::Hooks # 훅 리스너 등록 (autoload)
     Terminology.install!
   end

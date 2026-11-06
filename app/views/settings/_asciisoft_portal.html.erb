@@ -1,6 +1,6 @@
 <% s = AsciisoftPortal::DEFAULTS.merge((@settings || {}).to_h.transform_keys(&:to_s)) %>
 <div class="box tabular settings">
-  <% %w[terminology filter_labels module_new_button default_all_status notifications].each do |key| %>
+  <% %w[terminology filter_labels module_new_button default_all_status wiki_index_first notifications].each do |key| %>
   <p>
     <label for="settings_<%= key %>"><%= l("setting_asciisoft_#{key}") %></label>
     <%= hidden_field_tag "settings[#{key}]", '0', id: nil %>

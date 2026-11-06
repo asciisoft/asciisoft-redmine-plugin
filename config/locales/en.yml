@@ -32,3 +32,5 @@ en:
   setting_asciisoft_excluded_status_names: Statuses excluded from progress
   text_asciisoft_restart: "Terminology settings take effect after restarting Redmine."
   text_asciisoft_names_hint: "Comma-separated status names"
+  label_asciisoft_no: "No"
+  setting_asciisoft_wiki_index_first: "Open the wiki page index from the Wiki menu"
