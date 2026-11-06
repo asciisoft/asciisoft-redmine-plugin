@@ -72,6 +72,8 @@ module AsciisoftPortal
         status: status_key,
         status_label: status_key == 'hidden' ? nil : ::I18n.t("label_asciisoft_status_#{status_key}", default: status_key),
         subtitle: header&.subtitle.presence,
+        sub_title: (header.try(:sub_title).presence if header),
+        logo: (header&.logo? ? "#{base}/projects/#{project.identifier}/asciisoft_header/image?kind=logo&v=#{header.updated_at.to_i}" : nil),
         bg: header&.bg_mode.presence || 'pattern',
         image: (header&.image? ? "#{base}/projects/#{project.identifier}/asciisoft_header/image?v=#{header.updated_at.to_i}" : nil),
         can_edit: user.allowed_to?(:edit_project, project),

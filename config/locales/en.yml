@@ -34,3 +34,8 @@ en:
   text_asciisoft_names_hint: "Comma-separated status names"
   label_asciisoft_no: "No"
   setting_asciisoft_wiki_index_first: "Open the wiki page index from the Wiki menu"
+  label_asciisoft_sub_title: Subtitle
+  label_asciisoft_sub_title_hint: "Shown small next to the project name (max 120 characters)"
+  label_asciisoft_logo: Project logo image
+  label_asciisoft_logo_hint: "PNG, JPG, WEBP or GIF up to 1MB. Displayed up to 70×70px"
+  label_asciisoft_logo_remove: Remove current logo

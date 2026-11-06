@@ -34,3 +34,8 @@ ko:
   text_asciisoft_names_hint: "상태 이름을 쉼표(,)로 구분해 입력"
   label_asciisoft_no: 번호
   setting_asciisoft_wiki_index_first: "위키 메뉴를 누르면 문서 목록부터 표시"
+  label_asciisoft_sub_title: 부제목
+  label_asciisoft_sub_title_hint: "프로젝트명 오른쪽에 작게 표시 (120자 이내)"
+  label_asciisoft_logo: 프로젝트 로고 이미지
+  label_asciisoft_logo_hint: "PNG · JPG · WEBP · GIF, 1MB 이하. 화면에는 최대 70×70px로 표시"
+  label_asciisoft_logo_remove: 현재 로고 삭제
