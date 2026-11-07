@@ -1,5 +1,5 @@
 en:
-  label_asciisoft_header: Portal header
+  label_asciisoft_header: Project header
   label_asciisoft_portal: ASCII SOFT Portal
   label_asciisoft_status: Status label
   label_asciisoft_subtitle: Subtitle
@@ -42,3 +42,10 @@ en:
   label_asciisoft_landing_project: Open my project after login
   label_asciisoft_landing_none: "None"
   text_asciisoft_landing_hint: "After login, go straight to this project instead of the home page."
+  setting_asciisoft_auto_due_date: "Set due date to today when closed (clear when reopened)"
+  setting_asciisoft_internal_group: Group allowed to see the project list filters
+  setting_asciisoft_pf_start: "Project card: start date field name"
+  setting_asciisoft_pf_end: "Project card: end date field name"
+  setting_asciisoft_pf_manager: "Project card: manager field name"
+  setting_asciisoft_pf_phone: "Project card: phone field name"
+  label_asciisoft_comment_write: Write a comment

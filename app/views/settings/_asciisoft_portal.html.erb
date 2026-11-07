@@ -1,6 +1,6 @@
 <% s = AsciisoftPortal::DEFAULTS.merge((@settings || {}).to_h.transform_keys(&:to_s)) %>
 <div class="box tabular settings">
-  <% %w[terminology filter_labels module_new_button default_all_status wiki_index_first notifications].each do |key| %>
+  <% %w[terminology filter_labels module_new_button default_all_status wiki_index_first auto_due_date notifications].each do |key| %>
   <p>
     <label for="settings_<%= key %>"><%= l("setting_asciisoft_#{key}") %></label>
     <%= hidden_field_tag "settings[#{key}]", '0', id: nil %>
@@ -18,6 +18,10 @@
                    id: 'settings_customer_role' %>
   </p>
   <p>
+    <label for="settings_internal_group"><%= l(:setting_asciisoft_internal_group) %></label>
+    <%= text_field_tag 'settings[internal_group]', s['internal_group'], size: 30, id: 'settings_internal_group' %>
+  </p>
+  <p>
     <label for="settings_new_status_names"><%= l(:setting_asciisoft_new_status_names) %></label>
     <%= text_field_tag 'settings[new_status_names]', s['new_status_names'], size: 40, id: 'settings_new_status_names' %>
     <em class="info"><%= l(:text_asciisoft_names_hint) %></em>
@@ -27,5 +31,11 @@
     <%= text_field_tag 'settings[excluded_status_names]', s['excluded_status_names'], size: 40, id: 'settings_excluded_status_names' %>
     <em class="info"><%= l(:text_asciisoft_names_hint) %></em>
   </p>
+  <% %w[pf_start pf_end pf_manager pf_phone].each do |key| %>
+  <p>
+    <label for="settings_<%= key %>"><%= l("setting_asciisoft_#{key}") %></label>
+    <%= text_field_tag "settings[#{key}]", s[key], size: 30, id: "settings_#{key}" %>
+  </p>
+  <% end %>
   <p><em class="info"><%= l(:text_asciisoft_restart) %></em></p>
 </div>

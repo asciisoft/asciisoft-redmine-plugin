@@ -5,7 +5,9 @@ module AsciisoftPortal
     'terminology' => '1', 'filter_labels' => '1', 'module_new_button' => '1',
     'default_all_status' => '1', 'notifications' => '1', 'poll_seconds' => '30',
     'customer_role' => '일반 사용자', 'new_status_names' => '신규등록',
-    'excluded_status_names' => '반려', 'wiki_index_first' => '1'
+    'excluded_status_names' => '반려', 'wiki_index_first' => '1',
+    'auto_due_date' => '1', 'internal_group' => '아스키 소프트',
+    'pf_start' => '시작일', 'pf_end' => '종료일', 'pf_manager' => '담당자(직책)', 'pf_phone' => '담당자 연락처'
   }.freeze
 
   module_function

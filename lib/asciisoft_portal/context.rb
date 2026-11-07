@@ -20,7 +20,8 @@ module AsciisoftPortal
         base: base,
         lang: ::I18n.locale.to_s,
         page: {controller: controller&.controller_name, action: controller&.action_name},
-        user: {logged: user.logged?, id: user.logged? ? user.id : nil, name: user.logged? ? user.name : nil},
+        user: {logged: user.logged?, id: user.logged? ? user.id : nil, name: user.logged? ? user.name : nil,
+               internal: internal_user?(user)},
         mode: user_mode(user),
         notifications: notifications_config(user, base),
         endpoints: {mode: "#{base}/asciisoft/mode"},
@@ -30,6 +31,9 @@ module AsciisoftPortal
       }
       if project.is_a?(::Project) && project.persisted? && project.visible?(user)
         data[:project] = project_data(controller, project, user, base)
+      end
+      if controller&.controller_name == 'projects' && controller.action_name == 'index'
+        data[:project_cards] = project_cards(user)
       end
       data
     end
@@ -41,6 +45,49 @@ module AsciisoftPortal
       data = build(controller, context[:project])
       json = ERB::Util.json_escape(data.to_json)
       %(<script type="application/json" id="asciisoft-context">#{json}</script>).html_safe
+    end
+
+    # 프로젝트 목록 카드: 기간 · 담당자 · 연락처 (프로젝트 사용자 정의 필드)
+    def project_cards(user)
+      keys = {start: 'pf_start', end: 'pf_end', manager: 'pf_manager', phone: 'pf_phone'}
+      names = keys.transform_values {|k| AsciisoftPortal.setting(k).to_s.strip }
+      fields = ::ProjectCustomField.where(name: names.values.reject(&:empty?)).to_a
+      return {} if fields.empty?
+
+      projects = ::Project.visible(user).limit(500).to_a
+      values = ::CustomValue.where(customized_type: 'Project', customized_id: projects.map(&:id),
+                                   custom_field_id: fields.map(&:id)).to_a.group_by(&:customized_id)
+      fmt = Object.new.extend(::Redmine::I18n)
+      projects.each_with_object({}) do |p, out|
+        row = {}
+        Array(values[p.id]).each do |cv|
+          cf = fields.detect {|f| f.id == cv.custom_field_id }
+          next unless cf && cv.value.present?
+          next if cf.respond_to?(:visible_by?) && !cf.visible_by?(p, user)
+
+          key = names.key(cf.name)
+          val = cv.value.to_s
+          if %i[start end].include?(key)
+            d = (Date.parse(val) rescue nil)
+            val = d ? fmt.format_date(d) : val
+          end
+          row[key] = val
+        end
+        out[p.identifier] = row if row.any?
+      end
+    rescue StandardError => e
+      Rails.logger.error("[asciisoft_portal] project cards: #{e.message}")
+      {}
+    end
+
+    def internal_user?(user)
+      return false unless user.logged?
+      return true if user.admin?
+
+      name = AsciisoftPortal.setting('internal_group').to_s.strip
+      name.present? && user.groups.where(lastname: name).exists?
+    rescue StandardError
+      false
     end
 
     def user_mode(user)

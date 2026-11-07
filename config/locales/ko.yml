@@ -1,5 +1,5 @@
 ko:
-  label_asciisoft_header: 포털 헤더
+  label_asciisoft_header: 프로젝트 헤더
   label_asciisoft_portal: ASCII SOFT 포털
   label_asciisoft_status: 진행 상태 표시
   label_asciisoft_subtitle: 부가 문구
@@ -43,3 +43,12 @@ ko:
   label_asciisoft_landing_none: "사용 안 함"
   text_asciisoft_landing_hint: "로그인하면 메인화면 대신 이 프로젝트로 바로 이동합니다."
   button_create_and_follow: 만들고 이동
+  setting_asciisoft_auto_due_date: "완료 상태로 바꾸면 완료일을 오늘로 자동 입력 (되돌리면 비움)"
+  setting_asciisoft_internal_group: 프로젝트 목록 검색영역을 볼 수 있는 그룹
+  label_email_address_add: 알림 메일주소 추가
+  label_sort_by: "정렬기준 %{value}"
+  setting_asciisoft_pf_start: "프로젝트 카드: 시작일 필드 이름"
+  setting_asciisoft_pf_end: "프로젝트 카드: 종료일 필드 이름"
+  setting_asciisoft_pf_manager: "프로젝트 카드: 담당자 필드 이름"
+  setting_asciisoft_pf_phone: "프로젝트 카드: 연락처 필드 이름"
+  label_asciisoft_comment_write: 댓글 작성
